@@ -8,7 +8,6 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -69,10 +68,10 @@
             <section class="hero container-fluid px-5 mt-3 d-flex align-items-center justify-content-center" id="home">
                 <div class="row d-flex align-items-center justify-content-center">
                   <div class="col-md-6 order-1 order-md-2 text-center">
-                    <img src="image.jpg" alt="Profile" class="hero-img">
+                    <img src="image.png" alt="Profile" class="hero-img">
                   </div>
                   <div class="col-md-6 order-2 order-md-1 hero-content">
-                    <h1>Hi, I'm John Doe</h1>
+                    <h1>Hi, I'm <span class="text-danger">Ankit Pandey</span></h1>
                     <p>A passionate Web Developer skilled in MERN stack and modern web technologies.</p>
                     <div class="hero-buttons">
                       <a href="Resume_Ankit.pdf" class="btn btn-resume" download>Download Resume</a>
@@ -335,9 +334,6 @@
                   
                 </div>
               </section>
-
-              
-  
         </main>
           <footer class="bg-dark text-light pt-5 pb-3 mt-5 border-top">
             <div class="container">
@@ -386,25 +382,5 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-        <script>
-            function showSection(sectionId) {
-              // Hide both
-              document.getElementById('educationContent').classList.add('d-none');
-              document.getElementById('extraContent').classList.add('d-none');
-          
-              // Show the selected one
-              document.getElementById(sectionId).classList.remove('d-none');
-          
-              // Update active class
-              document.getElementById('edu-tab').classList.remove('active');
-              document.getElementById('extra-tab').classList.remove('active');
-          
-              if (sectionId === 'educationContent') {
-                document.getElementById('edu-tab').classList.add('active');
-              } else {
-                document.getElementById('extra-tab').classList.add('active');
-              }
-            }
-          </script>
     </body>
 </html>
