@@ -12,6 +12,33 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  background-color: #07101c;
+}
+
+/* Full-site scrollable background image */
+.portfolio-app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(180deg, rgba(7, 16, 28, 0.65) 0%, rgba(7, 16, 28, 0.82) 32%, rgba(7, 16, 28, 0.92) 70%, rgba(7, 16, 28, 0.98) 100%),
+    url('./assets/hero.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .site-header {
@@ -182,11 +209,25 @@
 }
 
 .hero-section {
-  padding: 4rem 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 0 5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.18;
+  color: #ffffff;
+  letter-spacing: -0.015em;
 }
 
 .hero-text {
-  color: #cbd8ee;
+  color: #d0e0f5;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  max-width: 740px;
 }
 
 .eyebrow,
@@ -346,11 +387,13 @@
 }
 
 .section-card {
-  margin: 10px 20px;
-  padding: 20px 18px;
-  border-radius: 5px;
-  background: rgba(10, 20, 38, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 16px 20px;
+  padding: 28px 24px;
+  border-radius: 14px;
+  background: rgba(10, 20, 38, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .section-card h2 {
