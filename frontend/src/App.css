@@ -1120,24 +1120,80 @@ main,
 }
 
 .project-card-interactive {
-  background: rgba(10, 20, 38, 0.85) !important;
-  border: 1px solid rgba(86, 204, 242, 0.16) !important;
-  border-radius: 14px !important;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(10, 20, 38, 0.88) !important;
+  border: 1px solid rgba(86, 204, 242, 0.18) !important;
+  border-radius: 16px !important;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-card-interactive:hover,
+.project-card-interactive.is-expanded {
+  border-color: rgba(86, 204, 242, 0.55) !important;
+  box-shadow: 
+    0 20px 48px rgba(4, 20, 48, 0.75),
+    0 0 28px rgba(86, 204, 242, 0.25) !important;
+}
+
+/* Image preview banner */
+.project-image-wrapper {
+  height: 200px;
+  background: #061120;
+  position: relative;
   overflow: hidden;
 }
 
-.project-card-interactive:hover {
-  border-color: rgba(86, 204, 242, 0.45) !important;
-  box-shadow: 0 16px 40px rgba(4, 20, 48, 0.6), 0 0 24px rgba(86, 204, 242, 0.2);
+.project-cover-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+.project-card-interactive:hover .project-cover-img,
+.project-card-interactive.is-expanded .project-cover-img {
+  transform: scale(1.08);
+  filter: brightness(1.02) contrast(1.08);
+}
+
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 16, 28, 0.05) 0%, rgba(7, 16, 28, 0.85) 100%);
+  pointer-events: none;
+}
+
+.project-category-badge {
+  background: rgba(14, 38, 70, 0.82) !important;
+  color: #72dbf7 !important;
+  border: 1px solid rgba(86, 204, 242, 0.35);
+  backdrop-filter: blur(8px);
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+
+.project-expand-hint {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card-interactive:hover .project-expand-hint,
+.project-card-interactive.is-expanded .project-expand-hint {
+  opacity: 0;
+  transform: translateY(4px);
 }
 
 .project-card-title {
   transition: color 0.2s ease;
 }
 
-.project-card-interactive:hover .project-card-title {
+.project-card-interactive:hover .project-card-title,
+.project-card-interactive.is-expanded .project-card-title {
   color: #72dbf7 !important;
+  text-shadow: 0 0 12px rgba(86, 204, 242, 0.4);
 }
 
 .project-card-arrow {
@@ -1151,9 +1207,51 @@ main,
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
 }
 
-.project-card-interactive:hover .project-card-arrow {
+.project-card-interactive:hover .project-card-arrow,
+.project-card-interactive.is-expanded .project-card-arrow {
   transform: translate(3px, -3px);
   background: rgba(86, 204, 242, 0.25);
+}
+
+/* Hidden Points Container: smoothly expands on hover/tap! */
+.project-points-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(8px);
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, transform 0.35s ease;
+  will-change: max-height, opacity, transform;
+}
+
+.project-card-interactive:hover .project-points-container,
+.project-card-interactive.is-expanded .project-points-container {
+  max-height: 320px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-points-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(86, 204, 242, 0.5) 0%, rgba(86, 204, 242, 0.1) 60%, transparent 100%);
+}
+
+.points-header {
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+}
+
+.project-points-list li {
+  line-height: 1.45;
+  transition: transform 0.2s ease;
+}
+
+.project-points-list li:hover {
+  transform: translateX(3px);
+  color: #ffffff !important;
+}
+
+.project-points-list li i {
+  font-size: 0.75rem;
 }
 
 .project-tag-pill {

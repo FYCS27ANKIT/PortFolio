@@ -61,26 +61,62 @@ export const skills = [
 export const projects = [
   {
     name: 'Real-Time Chat Application',
+    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
     description:
-      'Built a real-time messaging app using MERN and Socket.io with authenticated users, instant updates, and backend API integration.',
-    tags: ['MERN', 'Socket.io', 'Realtime'],
+      'Full-stack real-time messaging app built with MERN and Socket.io for instant sub-50ms message delivery.',
+    points: [
+      'Bi-directional WebSocket communication architecture with sub-50ms message latency.',
+      'Secure JWT authentication with encrypted private and multi-user chat rooms.',
+      'Live presence indicators, real-time typing status, and read receipt tracking.',
+      'Responsive dark glassmorphic UI with local message history persistence.'
+    ],
+    tags: ['MERN', 'Socket.io', 'Realtime', 'WebSockets', 'JWT'],
     demo: 'https://fyc527ankit.github.io/realtime-chat-app',
     github: 'https://github.com/FYCS27ANKIT',
   },
   {
     name: 'SkillSwap Platform',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     description:
-      'Created a skill exchange platform with authentication, user profiles, and interaction features for people to connect and share expertise.',
-    tags: ['MERN', 'Profiles', 'Authentication'],
+      'Peer-to-peer knowledge exchange and mentoring platform connecting developers and creators worldwide.',
+    points: [
+      'Interactive skill matchmaking algorithms pairing mentors and learners by expertise.',
+      'Comprehensive user profiles with portfolio showcases and community endorsements.',
+      'Automated session scheduling with timezone conversion and email notifications.',
+      'RESTful API architecture secured with role-based access control and MongoDB aggregations.'
+    ],
+    tags: ['MERN', 'REST API', 'Profiles', 'MongoDB', 'Authentication'],
     demo: 'https://fyc527ankit.github.io/skillswap-platform',
     github: 'https://github.com/FYCS27ANKIT',
   },
   {
     name: 'Real Estate Management System',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
     description:
-      'Developed a responsive property management platform using PHP, MySQL, HTML, CSS, and JavaScript with secure authentication and admin dashboards.',
-    tags: ['PHP', 'MySQL', 'CRUD'],
+      'Property listing and client inquiry portal featuring dynamic search filtering and admin control panels.',
+    points: [
+      'Modular PHP MVC backend with relational MySQL schema and prepared statements.',
+      'Multi-tier administrative dashboards for property CRUD, booking, and lead tracking.',
+      'Dynamic multi-parameter property filtering by price range, square footage, and amenities.',
+      'Responsive Bootstrap 5 interface optimized for mobile buyers and real estate agents.'
+    ],
+    tags: ['PHP', 'MySQL', 'CRUD', 'Bootstrap 5', 'MVC'],
     demo: 'https://fyc527ankit.github.io/real-estate-management-system',
+    github: 'https://github.com/FYCS27ANKIT',
+  },
+  {
+    name: 'Job-Hunt-OS',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    description:
+      'Developer job search operating system with Kanban application tracking, resume matching, and follow-up analytics.',
+    points: [
+      'Interactive drag-and-drop Kanban board managing stages from Wishlist to Interview and Offer.',
+      'Analytics suite calculating application conversion velocity, response rates, and salary metrics.',
+      'Resume version tracking matching specific submitted CV versions against job descriptions.',
+      'Automated email notification scheduler reminding developers of upcoming technical interview rounds.'
+    ],
+    tags: ['React', 'Node.js', 'Kanban', 'Analytics', 'Productivity'],
+    demo: 'https://fyc527ankit.github.io/realtime-chat-app',
     github: 'https://github.com/FYCS27ANKIT',
   },
 ]
