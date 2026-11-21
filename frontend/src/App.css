@@ -701,24 +701,204 @@ main,
   color: rgba(148, 168, 197, 0.5) !important;
 }
 
+/* ==========================================================
+   HIGH-VOLTAGE LIGHTNING THUNDER BEAM BUTTONS
+   ========================================================== */
+.btn-primary,
+.hero-btn-glow,
 .contact-submit-btn {
-  background: linear-gradient(135deg, #2f80ed 0%, #00b4d8 100%) !important;
-  border: none !important;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(120% 120% at 50% 20%, #175294 0%, #0d3b6f 55%, #072244 100%) !important;
+  border: 1px solid rgba(86, 204, 242, 0.6) !important;
+  color: #ffffff !important;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0, 180, 216, 0.35);
-  transition: all 0.25s ease;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0 10px rgba(86, 204, 242, 0.8);
+  box-shadow: 
+    0 0 12px rgba(86, 204, 242, 0.45),
+    0 0 28px rgba(47, 128, 237, 0.3),
+    inset 0 0 14px rgba(86, 204, 242, 0.3) !important;
+  animation: thunder-beam-pulse 3s infinite alternate;
+  z-index: 1;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
+/* Hyper-Speed Lightning Thunder Beam Streak Sweep */
+.btn-primary::after,
+.hero-btn-glow::after,
+.contact-submit-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -90%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(86, 204, 242, 0.15) 25%,
+    rgba(255, 255, 255, 0.95) 48%,
+    rgba(142, 234, 255, 1) 50%,
+    rgba(255, 255, 255, 0.95) 52%,
+    rgba(47, 128, 237, 0.45) 65%,
+    transparent 100%
+  );
+  transform: rotate(26deg);
+  filter: drop-shadow(0 0 8px #56ccf2) drop-shadow(0 0 14px #ffffff);
+  animation: lightning-beam-sweep 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Internal electric shockwave border beam */
+.btn-primary::before,
+.hero-btn-glow::before,
+.contact-submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, #56ccf2, #2f80ed, #ffffff, #56ccf2);
+  background-size: 300% 100%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: thunder-border-run 2.4s linear infinite;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+@keyframes thunder-border-run {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes lightning-beam-sweep {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  32% {
+    left: 150%;
+    opacity: 1;
+  }
+  33%, 100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
+
+@keyframes thunder-beam-pulse {
+  0% {
+    box-shadow: 
+      0 0 12px rgba(86, 204, 242, 0.45),
+      0 0 25px rgba(47, 128, 237, 0.25),
+      inset 0 0 12px rgba(86, 204, 242, 0.25);
+    border-color: rgba(86, 204, 242, 0.6);
+  }
+  48% {
+    box-shadow: 
+      0 0 18px rgba(86, 204, 242, 0.65),
+      0 0 36px rgba(47, 128, 237, 0.4),
+      inset 0 0 16px rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(255, 255, 255, 0.95),
+      0 0 55px rgba(86, 204, 242, 0.85),
+      0 0 85px rgba(47, 128, 237, 0.65),
+      inset 0 0 22px rgba(255, 255, 255, 0.7);
+    border-color: #ffffff;
+  }
+  54% {
+    box-shadow: 
+      0 0 14px rgba(86, 204, 242, 0.5),
+      0 0 30px rgba(47, 128, 237, 0.3),
+      inset 0 0 14px rgba(86, 204, 242, 0.3);
+    border-color: rgba(86, 204, 242, 0.7);
+  }
+  100% {
+    box-shadow: 
+      0 0 12px rgba(86, 204, 242, 0.45),
+      0 0 25px rgba(47, 128, 237, 0.25),
+      inset 0 0 12px rgba(86, 204, 242, 0.25);
+    border-color: rgba(86, 204, 242, 0.6);
+  }
+}
+
+/* High-Voltage Thunder Hover Overdrive */
+.btn-primary:hover,
+.hero-btn-glow:hover,
 .contact-submit-btn:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.55);
+  transform: translateY(-3px) scale(1.03);
+  background: radial-gradient(120% 120% at 50% 20%, #206ec4 0%, #124987 55%, #0a2f5c 100%) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 12px #ffffff, 0 0 24px #56ccf2;
+  box-shadow: 
+    0 0 25px rgba(86, 204, 242, 0.9),
+    0 0 55px rgba(47, 128, 237, 0.7),
+    0 0 90px rgba(86, 204, 242, 0.45),
+    inset 0 0 20px rgba(255, 255, 255, 0.6) !important;
+}
+
+.btn-primary:hover::after,
+.hero-btn-glow:hover::after,
+.contact-submit-btn:hover:not(:disabled)::after {
+  animation-duration: 1.2s; /* Lightning sweep speeds up on hover! */
+}
+
+/* Thunder Flash Strike on Click */
+.btn-primary:active,
+.hero-btn-glow:active,
+.contact-submit-btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 
+    0 0 45px #ffffff,
+    0 0 90px #56ccf2,
+    inset 0 0 28px #ffffff !important;
 }
 
 .contact-submit-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+  animation: none;
+}
+
+.contact-submit-btn:disabled::after,
+.contact-submit-btn:disabled::before {
+  display: none;
+}
+
+/* Outline Buttons Electric Lightning Edge on Hover */
+.btn-outline-light,
+.btn-outline-info,
+.hero-btn-outline,
+.nav-resume-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-outline-info:hover,
+.hero-btn-outline:hover,
+.nav-resume-btn:hover {
+  border-color: #56ccf2 !important;
+  background: rgba(86, 204, 242, 0.16) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px rgba(86, 204, 242, 0.6), inset 0 0 12px rgba(86, 204, 242, 0.25) !important;
+  text-shadow: 0 0 10px #56ccf2;
+  transform: translateY(-2px) scale(1.02);
 }
 
 .contact-feedback-box {
@@ -907,39 +1087,6 @@ main,
 .text-flipper-word.flipping-in {
   opacity: 1;
   transform: translateY(0) scale(1);
-}
-
-/* Hero CTA Buttons & Interactive Magnetic Feel */
-.hero-btn-glow {
-  background: linear-gradient(135deg, #2f80ed 0%, #00b4d8 100%) !important;
-  border: none !important;
-  font-weight: 600;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(0, 180, 216, 0.35);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
-}
-
-.hero-btn-glow:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 28px rgba(86, 204, 242, 0.55) !important;
-}
-
-.hero-btn-glow:active {
-  transform: translateY(1px) scale(0.98);
-}
-
-.hero-btn-outline {
-  border-radius: 12px;
-  font-weight: 500;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease !important;
-}
-
-.hero-btn-outline:hover {
-  transform: translateY(-3px) scale(1.02);
-}
-
-.hero-btn-outline:active {
-  transform: translateY(1px) scale(0.98);
 }
 
 /* Social icons interactive floating boxes */
