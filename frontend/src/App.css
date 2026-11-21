@@ -544,6 +544,48 @@
   border: 1px solid rgba(32, 201, 151, 0.25);
 }
 
+.contact-inbox-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #72dbf7;
+  background: rgba(14, 38, 70, 0.65);
+  border: 1px solid rgba(86, 204, 242, 0.25);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.pulse-dot-cyan {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #56ccf2;
+  display: inline-block;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 0 rgba(86, 204, 242, 0.7);
+  animation: pulse-cyan 2s infinite;
+}
+
+@keyframes pulse-cyan {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(86, 204, 242, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(86, 204, 242, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(86, 204, 242, 0);
+  }
+}
+
 .status-dot-pulse {
   width: 10px;
   height: 10px;

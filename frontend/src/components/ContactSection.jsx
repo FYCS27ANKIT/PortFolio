@@ -227,7 +227,7 @@ export default function ContactSection() {
                 <div className="contact-status-badge d-flex align-items-center gap-2 mb-4 p-3 rounded">
                   <span className="status-dot-pulse" />
                   <span className="small text-light">
-                    Available for full-time developer positions & freelance projects.
+                    Available for full-time developer positions.
                   </span>
                 </div>
               </div>
@@ -280,10 +280,11 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="contact-form">
-                  <div className="d-flex align-items-center justify-content-between mb-3">
-                    <h4 className="text-white mb-0">Send a Direct Message</h4>
-                    <span className="badge bg-primary-subtle text-info border border-info-subtle">
-                      <i className="bi bi-shield-check me-1" /> Direct to Gmail
+                  <div className="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                    <h4 className="text-white mb-0">Send a Message</h4>
+                    <span className="contact-inbox-pill">
+                      <span className="pulse-dot-cyan" />
+                      <span>Direct to Inbox</span>
                     </span>
                   </div>
 
