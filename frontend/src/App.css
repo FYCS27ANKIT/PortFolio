@@ -1130,6 +1130,7 @@ main,
 
 .project-card-interactive:hover,
 .project-card-interactive.is-expanded {
+  transform: translateY(-4px);
   border-color: rgba(86, 204, 242, 0.55) !important;
   box-shadow: 
     0 20px 48px rgba(4, 20, 48, 0.75),

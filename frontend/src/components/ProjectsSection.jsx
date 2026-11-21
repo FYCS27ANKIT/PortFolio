@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { projects } from '../data'
 import ScrollReveal from './ScrollReveal'
-import TiltCard from './TiltCard'
 
 export default function ProjectsSection() {
   const [expandedCards, setExpandedCards] = useState({})
@@ -35,11 +34,10 @@ export default function ProjectsSection() {
             return (
               <div key={project.name} className="col">
                 <ScrollReveal delay={idx * 0.12} className="h-100">
-                  <TiltCard className="h-100" maxTilt={8}>
-                    <article
-                      className={`card card-custom h-100 project-card-interactive ${isExpanded ? 'is-expanded' : ''}`}
-                      onClick={() => toggleCard(project.name)}
-                    >
+                  <article
+                    className={`card card-custom h-100 project-card-interactive ${isExpanded ? 'is-expanded' : ''}`}
+                    onClick={() => toggleCard(project.name)}
+                  >
                       {/* Project Preview Image */}
                       <div className="project-image-wrapper position-relative overflow-hidden">
                         <img
@@ -123,9 +121,8 @@ export default function ProjectsSection() {
                         </div>
                       </div>
                     </article>
-                  </TiltCard>
-                </ScrollReveal>
-              </div>
+                  </ScrollReveal>
+                </div>
             )
           })}
         </div>
