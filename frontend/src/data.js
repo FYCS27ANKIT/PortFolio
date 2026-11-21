@@ -1,7 +1,7 @@
 import heroImg from './assets/hero.png'
 
 const base = import.meta.env.BASE_URL || '/'
-const resumePath = `${base.endsWith('/') ? base : base + '/'}resume.pdf`
+const resumePath = `${base.endsWith('/') ? base : base + '/'}resume.pdf?v=2`
 
 export const contact = {
   email: 'ankit.p6384@gmail.com',
