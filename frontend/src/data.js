@@ -5,6 +5,9 @@ export const contact = {
   phone: '+91 7080706384',
   location: 'Malad west, Mumbai, Maharashtra, India',
   resume: '/resume.pdf',
+  github: 'https://github.com/FYCS27ANKIT',
+  linkedin: 'https://www.linkedin.com/in/ankit-pandey-633533284/',
+  instagram: 'https://www.instagram.com/__ankitup44__/',
 }
 
 export const summary =
@@ -82,7 +85,10 @@ export const projects = [
 ]
 
 export const social = [
-  { label: 'Email', href: `mailto:${contact.email}`, short: 'EM' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ankit-pandey-633533284/', icon: 'bi-linkedin', short: 'IN' },
+  { label: 'GitHub', href: 'https://github.com/FYCS27ANKIT', icon: 'bi-github', short: 'GH' },
+  { label: 'Instagram', href: 'https://www.instagram.com/__ankitup44__/', icon: 'bi-instagram', short: 'IG' },
+  { label: 'Email', href: `mailto:${contact.email}`, icon: 'bi-envelope-fill', short: 'EM' },
 ]
 
 export const heroImgSrc = heroImg
