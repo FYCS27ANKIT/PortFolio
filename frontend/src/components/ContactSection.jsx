@@ -180,19 +180,6 @@ export default function ContactSection() {
                     </button>
                   </div>
 
-                  {/* Phone Box */}
-                  <div className="contact-info-item d-flex align-items-start gap-3 mb-3 p-3 rounded">
-                    <div className="contact-info-icon">
-                      <i className="bi bi-telephone-fill text-info fs-5" />
-                    </div>
-                    <div>
-                      <div className="contact-info-label">Phone</div>
-                      <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="contact-info-value">
-                        {contact.phone}
-                      </a>
-                    </div>
-                  </div>
-
                   {/* Location Box */}
                   <div className="contact-info-item d-flex align-items-start gap-3 mb-3 p-3 rounded">
                     <div className="contact-info-icon">

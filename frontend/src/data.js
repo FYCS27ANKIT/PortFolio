@@ -5,7 +5,6 @@ const resumePath = `${base.endsWith('/') ? base : base + '/'}resume.pdf?v=2`
 
 export const contact = {
   email: 'ankit.p6384@gmail.com',
-  phone: '+91 7080706384',
   location: 'Malad west, Mumbai, Maharashtra, India',
   resume: resumePath,
   github: 'https://github.com/FYCS27ANKIT',
