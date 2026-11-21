@@ -1,52 +1,68 @@
 import { summary, contact } from '../data'
+import ParticleCanvas from './ParticleCanvas'
+import TextFlipper from './TextFlipper'
 
 export default function HeroSection() {
   return (
-    <section className="hero-section py-5 d-flex align-items-center" id="home">
-      <div className="container py-lg-4">
+    <section className="hero-section py-5 d-flex align-items-center position-relative overflow-hidden" id="home">
+      {/* Interactive Constellation Particle Canvas */}
+      <ParticleCanvas />
+
+      <div className="container py-lg-5 position-relative" style={{ zIndex: 1 }}>
         <div className="row align-items-center">
           <div className="col-lg-10 col-xl-9">
-            <p className="eyebrow mb-2">Hi, I’m Ankit Pandey</p>
-            <h1 className="hero-title mb-3">
-              I build modern web apps with <span className="accent">MERN</span> and WordPress.
-            </h1>
-            <p className="hero-text fs-5 mb-4">{summary}</p>
+            {/* Glowing Holographic Eyebrow */}
+            <div className="hero-badge-wrapper mb-3 d-inline-block">
+              <span className="hero-eyebrow-pill d-inline-flex align-items-center gap-2">
+                <span className="hero-pulse-ring" />
+                <span>Available for Opportunities</span>
+              </span>
+            </div>
 
-            <div className="d-flex flex-wrap gap-3 mt-4">
+            <h1 className="hero-title mb-4">
+              I build modern web apps with{' '}
+              <TextFlipper words={['MERN Stack', 'WordPress Plugins', 'REST APIs', 'Full-Stack Apps']} />
+            </h1>
+
+            <p className="hero-text fs-5 mb-4 text-light-subtle">
+              {summary}
+            </p>
+
+            <div className="d-flex flex-wrap gap-3 mt-4 hero-cta-group">
               <a
-                className="btn btn-primary btn-lg d-inline-flex align-items-center gap-2"
+                className="btn btn-primary btn-lg hero-btn-glow d-inline-flex align-items-center gap-2"
                 href={contact.resume}
                 target="_blank"
                 rel="noreferrer"
               >
                 <i className="bi bi-file-earmark-pdf-fill" />
-                View Resume
+                <span>View Resume</span>
               </a>
               <a
-                className="btn btn-outline-info btn-lg d-inline-flex align-items-center gap-2"
+                className="btn btn-outline-info btn-lg hero-btn-outline d-inline-flex align-items-center gap-2"
                 href={contact.resume}
                 download="Ankit_Pandey_Resume.pdf"
               >
                 <i className="bi bi-download" />
-                Download Resume
+                <span>Download Resume</span>
               </a>
               <a
-                className="btn btn-outline-light btn-lg d-inline-flex align-items-center gap-2"
+                className="btn btn-outline-light btn-lg hero-btn-outline d-inline-flex align-items-center gap-2"
                 href={contact.github || 'https://github.com/FYCS27ANKIT'}
                 target="_blank"
                 rel="noreferrer"
               >
                 <i className="bi bi-github" />
-                GitHub
+                <span>GitHub</span>
               </a>
             </div>
 
-            <div className="social-icons d-flex gap-3 mt-4">
+            <div className="social-icons d-flex gap-3 mt-4 pt-2">
               <a
                 href={contact.github || 'https://github.com/FYCS27ANKIT'}
                 target="_blank"
                 rel="noreferrer"
-                className="text-light fs-4"
+                className="social-icon-box"
                 title="GitHub"
               >
                 <i className="bi bi-github" />
@@ -55,7 +71,7 @@ export default function HeroSection() {
                 href={contact.linkedin || 'https://www.linkedin.com/in/ankit-pandey-633533284/'}
                 target="_blank"
                 rel="noreferrer"
-                className="text-light fs-4"
+                className="social-icon-box"
                 title="LinkedIn"
               >
                 <i className="bi bi-linkedin" />
@@ -64,7 +80,7 @@ export default function HeroSection() {
                 href={contact.instagram || 'https://www.instagram.com/__ankitup44__/'}
                 target="_blank"
                 rel="noreferrer"
-                className="text-light fs-4"
+                className="social-icon-box"
                 title="Instagram"
               >
                 <i className="bi bi-instagram" />

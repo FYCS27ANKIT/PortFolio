@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { contact, social } from '../data'
+import ScrollReveal from './ScrollReveal'
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -125,20 +126,23 @@ export default function ContactSection() {
   return (
     <section className="section-card py-5" id="contact">
       <div className="container">
-        <div className="text-center mb-5">
-          <p className="section-label mb-2">Contact</p>
-          <h2 className="mb-2">Let’s Connect & Collaborate</h2>
-          <p className="text-muted mx-auto" style={{ maxWidth: '680px' }}>
-            Have a project in mind, a job opportunity, or just want to say hi? Send me a direct
-            message using the form below and it will reach me immediately at{' '}
-            <strong className="text-info">{targetEmail}</strong>.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-5">
+            <p className="section-label mb-2">Contact</p>
+            <h2 className="mb-2">Let’s Connect & Collaborate</h2>
+            <p className="text-muted mx-auto" style={{ maxWidth: '680px' }}>
+              Have a project in mind, a job opportunity, or just want to say hi? Send me a direct
+              message using the form below and it will reach me immediately at{' '}
+              <strong className="text-info">{targetEmail}</strong>.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="row g-4 align-items-stretch">
           {/* Left Column: Contact Information */}
           <div className="col-lg-5">
-            <div className="contact-info-card h-100 d-flex flex-column justify-content-between">
+            <ScrollReveal className="h-100" delay={0.08}>
+              <div className="contact-info-card h-100 d-flex flex-column justify-content-between">
               <div>
                 <h4 className="text-white mb-3">Contact Information</h4>
                 <p className="text-muted small mb-4">
@@ -251,11 +255,13 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
+        </div>
 
           {/* Right Column: Contact Form */}
           <div className="col-lg-7">
-            <div className="contact-form-card h-100 d-flex flex-column justify-content-center">
+            <ScrollReveal className="h-100" delay={0.16}>
+              <div className="contact-form-card h-100 d-flex flex-column justify-content-center">
               {status === 'success' ? (
                 <div className="contact-feedback-box contact-success-box text-center p-4">
                   <div className="feedback-icon-wrapper mb-3">
@@ -434,7 +440,8 @@ export default function ContactSection() {
                 </form>
               )}
             </div>
-          </div>
+          </ScrollReveal>
+        </div>
         </div>
       </div>
     </section>

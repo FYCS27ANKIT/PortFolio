@@ -760,6 +760,379 @@ main,
   color: #78a4d1;
 }
 
+/* ==========================================================
+   GOD-LEVEL ANIMATION SUITE (Interactive, Micro & Scroll UX)
+   ========================================================== */
+
+/* 1. Luminous Top Scroll Progress Line */
+.scroll-progress-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  z-index: 10000;
+  background: linear-gradient(90deg, #2f80ed 0%, #56ccf2 50%, #9b51e0 100%);
+  box-shadow: 0 0 10px rgba(86, 204, 242, 0.8), 0 0 20px rgba(47, 128, 237, 0.4);
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* Header scrolled glassmorphic state */
+.site-header {
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(4, 12, 26, 0.94) !important;
+  border-bottom: 1px solid rgba(86, 204, 242, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* 2. Scroll-Reveal System with Apple-tier Spring Easing */
+.reveal-box {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up {
+  transform: translateY(32px);
+}
+
+.reveal-down {
+  transform: translateY(-32px);
+}
+
+.reveal-left {
+  transform: translateX(32px);
+}
+
+.reveal-right {
+  transform: translateX(-32px);
+}
+
+.reveal-box.is-revealed {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* 3. Hero Section Animation Enhancements */
+.hero-badge-wrapper {
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-eyebrow-pill {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(14, 38, 70, 0.65);
+  border: 1px solid rgba(86, 204, 242, 0.3);
+  color: #72dbf7;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 16px rgba(86, 204, 242, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.hero-pulse-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #20c997;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(32, 201, 151, 0.7);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(32, 201, 151, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(32, 201, 151, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(32, 201, 151, 0);
+  }
+}
+
+/* Text Flipper / Shimmering Dynamic Keyword */
+.text-flipper-container {
+  vertical-align: baseline;
+  position: relative;
+  display: inline-block;
+}
+
+.text-flipper-word {
+  display: inline-block;
+  background: linear-gradient(135deg, #56ccf2 0%, #2f80ed 50%, #9b51e0 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 4s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.text-flipper-word.flipping-out {
+  opacity: 0;
+  transform: translateY(-16px) scale(0.95);
+}
+
+.text-flipper-word.flipping-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Hero CTA Buttons & Interactive Magnetic Feel */
+.hero-btn-glow {
+  background: linear-gradient(135deg, #2f80ed 0%, #00b4d8 100%) !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 180, 216, 0.35);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+}
+
+.hero-btn-glow:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(86, 204, 242, 0.55) !important;
+}
+
+.hero-btn-glow:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.hero-btn-outline {
+  border-radius: 12px;
+  font-weight: 500;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease !important;
+}
+
+.hero-btn-outline:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.hero-btn-outline:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Social icons interactive floating boxes */
+.social-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 28, 52, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #eff7ff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-icon-box:hover {
+  transform: translateY(-4px) scale(1.08);
+  border-color: #56ccf2;
+  background: rgba(86, 204, 242, 0.15);
+  color: #56ccf2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 14px rgba(86, 204, 242, 0.3);
+}
+
+/* 4. 3D Tilt Card & Interactive Project Spotlights */
+.tilt-card-wrapper {
+  border-radius: 14px;
+  will-change: transform;
+}
+
+.project-card-interactive {
+  background: rgba(10, 20, 38, 0.85) !important;
+  border: 1px solid rgba(86, 204, 242, 0.16) !important;
+  border-radius: 14px !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card-interactive:hover {
+  border-color: rgba(86, 204, 242, 0.45) !important;
+  box-shadow: 0 16px 40px rgba(4, 20, 48, 0.6), 0 0 24px rgba(86, 204, 242, 0.2);
+}
+
+.project-card-title {
+  transition: color 0.2s ease;
+}
+
+.project-card-interactive:hover .project-card-title {
+  color: #72dbf7 !important;
+}
+
+.project-card-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(86, 204, 242, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+
+.project-card-interactive:hover .project-card-arrow {
+  transform: translate(3px, -3px);
+  background: rgba(86, 204, 242, 0.25);
+}
+
+.project-tag-pill {
+  background: rgba(86, 204, 242, 0.1) !important;
+  color: #72dbf7 !important;
+  border: 1px solid rgba(86, 204, 242, 0.22);
+  font-weight: 500;
+  font-size: 0.78rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.project-tag-pill:hover {
+  background: rgba(86, 204, 242, 0.22) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.project-action-btn {
+  border-radius: 8px;
+  font-size: 0.82rem;
+  padding: 5px 12px;
+  transition: transform 0.2s ease;
+}
+
+.project-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* 5. Animated Skills Progress Cards */
+.skill-card {
+  background: rgba(14, 28, 52, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(86, 204, 242, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 14px rgba(86, 204, 242, 0.15);
+}
+
+.skill-name {
+  font-size: 0.95rem;
+}
+
+.skill-level-badge {
+  background: rgba(86, 204, 242, 0.12) !important;
+  color: #56ccf2 !important;
+  border: 1px solid rgba(86, 204, 242, 0.25);
+  font-size: 0.76rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.skill-progress-track {
+  background: rgba(6, 14, 28, 0.85);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.skill-progress-fill {
+  background: linear-gradient(90deg, #2f80ed 0%, #56ccf2 100%) !important;
+  box-shadow: 0 0 10px rgba(86, 204, 242, 0.7);
+  border-radius: 999px;
+  will-change: width;
+}
+
+/* 6. Timeline Glow Effects for Experience & Education */
+.timeline-card {
+  background: rgba(10, 20, 38, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(86, 204, 242, 0.3) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.timeline-node-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #56ccf2;
+  box-shadow: 0 0 8px #56ccf2;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.timeline-date-badge {
+  background: rgba(86, 204, 242, 0.1);
+  border: 1px solid rgba(86, 204, 242, 0.25);
+  color: #72dbf7;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.timeline-bullets li::marker {
+  color: #56ccf2;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-box {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .scroll-progress-line {
+    display: none !important;
+  }
+}
+
 @media (max-width: 980px) {
   .hero-section,
   .contact-section {
