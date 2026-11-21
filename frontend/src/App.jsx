@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { contact } from './data'
 import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import ExperienceSection from './components/ExperienceSection'
@@ -64,6 +65,18 @@ function App() {
               <li className="nav-item">
                 <a className="nav-link" href="#contact" onClick={() => setMenuOpen(false)}>
                   Contact
+                </a>
+              </li>
+              <li className="nav-item ms-lg-2 mt-2 mt-lg-0">
+                <a
+                  className="btn btn-outline-info btn-sm d-inline-flex align-items-center gap-1 px-3 py-1"
+                  href={contact.resume}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <i className="bi bi-file-earmark-pdf" />
+                  <span>View Resume</span>
                 </a>
               </li>
             </ul>

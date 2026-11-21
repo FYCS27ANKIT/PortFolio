@@ -10,10 +10,28 @@ export default function AboutSection() {
             <h2 className="mb-3">Building web solutions that are secure, scalable, and easy to maintain.</h2>
             <p>{summary}</p>
             <div className="d-flex flex-wrap gap-3 mt-4">
-              <a className="btn btn-primary" href={contact.resume} download>
-                Download resume
+              <a
+                className="btn btn-primary d-inline-flex align-items-center gap-2"
+                href={contact.resume}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-file-earmark-pdf-fill" />
+                View Resume
               </a>
-              <a className="btn btn-outline-light" href={`mailto:${contact.email}`}>
+              <a
+                className="btn btn-outline-info d-inline-flex align-items-center gap-2"
+                href={contact.resume}
+                download="Ankit_Pandey_Resume.pdf"
+              >
+                <i className="bi bi-download" />
+                Download
+              </a>
+              <a
+                className="btn btn-outline-light d-inline-flex align-items-center gap-2"
+                href="#contact"
+              >
+                <i className="bi bi-envelope" />
                 Contact me
               </a>
             </div>

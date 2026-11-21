@@ -12,15 +12,30 @@ export default function HeroSection() {
             </h1>
             <p className="hero-text">{summary}</p>
             <div className="d-flex flex-wrap gap-3 mt-4">
-              <a className="btn btn-primary btn-lg" href={contact.resume} download>
+              <a
+                className="btn btn-primary btn-lg d-inline-flex align-items-center gap-2"
+                href={contact.resume}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <i className="bi bi-file-earmark-pdf-fill" />
+                View Resume
+              </a>
+              <a
+                className="btn btn-outline-info btn-lg d-inline-flex align-items-center gap-2"
+                href={contact.resume}
+                download="Ankit_Pandey_Resume.pdf"
+              >
+                <i className="bi bi-download" />
                 Download Resume
               </a>
               <a
-                className="btn btn-outline-light btn-lg"
+                className="btn btn-outline-light btn-lg d-inline-flex align-items-center gap-2"
                 href="https://github.com/FYCS27ANKIT"
                 target="_blank"
                 rel="noreferrer"
               >
+                <i className="bi bi-github" />
                 GitHub
               </a>
             </div>

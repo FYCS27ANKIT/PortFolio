@@ -203,6 +203,38 @@ export default function ContactSection() {
                       <span className="contact-info-value">{contact.location}</span>
                     </div>
                   </div>
+
+                  {/* Resume / CV Box */}
+                  <div className="contact-info-item d-flex align-items-center justify-content-between mb-3 p-3 rounded">
+                    <div className="d-flex align-items-center gap-3">
+                      <div className="contact-info-icon">
+                        <i className="bi bi-file-earmark-pdf-fill text-info fs-5" />
+                      </div>
+                      <div>
+                        <div className="contact-info-label">Resume / CV</div>
+                        <span className="contact-info-value">Ankit Pandey Resume</span>
+                      </div>
+                    </div>
+                    <div className="d-flex gap-2">
+                      <a
+                        href={contact.resume}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-sm btn-outline-info contact-copy-btn"
+                        title="View Resume in new tab"
+                      >
+                        <i className="bi bi-eye me-1" /> View
+                      </a>
+                      <a
+                        href={contact.resume}
+                        download="Ankit_Pandey_Resume.pdf"
+                        className="btn btn-sm btn-outline-light contact-copy-btn"
+                        title="Download PDF"
+                      >
+                        <i className="bi bi-download" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="contact-status-badge d-flex align-items-center gap-2 mb-4 p-3 rounded">
