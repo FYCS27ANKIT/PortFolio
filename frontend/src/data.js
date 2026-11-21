@@ -1,12 +1,11 @@
 import heroImg from './assets/hero.png'
-
-const base = import.meta.env.BASE_URL || '/'
-const resumePath = `${base.endsWith('/') ? base : base + '/'}resume.pdf?v=2`
+import resumePdf from './assets/resume.pdf'
 
 export const contact = {
   email: 'ankit.p6384@gmail.com',
+  phone: '+91 7080706384',
   location: 'Malad west, Mumbai, Maharashtra, India',
-  resume: resumePath,
+  resume: resumePdf,
   github: 'https://github.com/FYCS27ANKIT',
   linkedin: 'https://www.linkedin.com/in/ankit-pandey-633533284/',
   instagram: 'https://www.instagram.com/__ankitup44__/',
